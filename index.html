@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Web</title>
+
+    <!-- Link to the OpenCv file -->
+    <script async src="../../Resources/opencv.js" onload="openCvReady()"></script>
+    <!-- Link to the Css file -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Add Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Add Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+    <!-- MediaPipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+  </head>
+  <body>
+    <!-- Main page (inside this we will have everything) -->
+    <div class="main-page">
+      <!-- ------------------------------- Side-Line ------------------------------- -->
+      <div class="side-line"></div>
+      <!-- ------------------------------- Side-Bar ------------------------------- -->
+      <div class="side-bar">
+        <span class="circle"
+          ><i class="material-icons" style="font-size: 36px; color: white"
+            >settings</i
+          ></span
+        >
+        <span class="circle"
+          ><i class="material-icons" style="font-size: 36px; color: white"
+            >info</i
+          ></span
+        >
+        <span class="circle"
+          ><i class="material-icons" style="font-size: 36px; color: white"
+            >visibility</i
+          ></span
+        >
+        <span class="circle"
+          ><i class="material-icons" style="font-size: 36px; color: white"
+            >auto_fix_normal</i
+          ></span
+        >
+        <span class="circle blue-circle"
+          ><i class="material-icons" style="font-size: 36px; color: white"
+            >videocam</i
+          ></span
+        >
+      </div>
+      <!-- ------------------------------- right-Panel ------------------------------- -->
+      <div class="right-panel">
+        <!-- ------------------ Header ------------------ -->
+        <div class="header">
+          <div class="empty-side"></div>
+          <h1>CV Drowsiness Detector</h1>
+          <div class="logo-container"><img src="../../Resources/Template/Logo.png" alt="" srcset="" width="120"></div>
+        </div>
+        <!-- ------------------ Tablet Container ------------------ -->
+        <div id="main-area-div">
+          <div class="tablet-container">
+            <img id="tablet-image" src="../../Resources/Template/tablet(720x720).png" width="780" height="780" alt="">
+            <canvas id="main-canvas" width="960" height="720">
+                <video src="" id="video" width="960" height="720"></video>
+            </canvas>
+            <canvas id="draw-canvas" width="720" height="720"></canvas>
+          </div>
+        <!-- ------------------ Plot Container ------------------ -->
+          <div id="chart-div">
+            <div id="line-chart-div"><canvas id="line-chart"></canvas></div>
+            <div id="slider">
+              <h2>Sensitivity</h2>
+                <input type="range" name="" id="input-slider">
+                <div id="adjustSlider">0</div>
+            </div>
+            <div id="counter">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Link to the Js file -->
+    <script src="main.js"></script>
+  </body>
+</html>
